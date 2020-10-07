@@ -6,6 +6,7 @@ import '../Styles/Dashboard.css';
 
 // import components
 import Header from '../Components/Header';
+import Card from '../Components/Card';
 import Loader from '../Components/Loader';
 import Alert from '../Components/Alert';
 
@@ -28,18 +29,7 @@ class Dashboard extends Component {
           </div>
           {
             this.props.items.map((item) => (
-              <div key={item.id} className="col-md-4">
-                <div className="card mb-4">
-                  <div className="card-body">
-                    <h5 className="card-title">{item.name}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">{item.phone}</h6>
-                    <h6 className="card-subtitle mb-2 text-muted">{item.email}</h6>
-                    <p>
-                      <span className="badge badge-success">{item.company}</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <Card key={item.id} {...item} />
             ))
           }
         </div>
